@@ -9,10 +9,47 @@
 		<div class="container">	
 		
 			<div class="jumbotron">
-				<h1 class="display-4">Meus Pedidos</h1>
+				<h1 class="display-4">Novo Produto</h1>
 			</div>
 		</div>
+		
+		<div class="container">
+		
+		<form action="/pedido/novo" method="POST" class="card p-4 col-8">
+		
+			<div class="col-md-8">
+				<label for="nomeProduto" class="form-label">Produto</label>
+				<input name="nomeProduto" class="form-control" placeholder="nome do produto"/>
+				<small>Informe qual o nome do produto</small>
+			</div>
+			
+			<div class="col-md-8">
+				<label for="urlProduto" class="form-label">Url</label>
+				<input name="urlProduto" class="form-control" placeholder="url do produto"/>
+				<small>Procure em um site o produto que você deseja</small>
+			</div>
+			
+			<div class="col-md-8">
+				<label for="urlImagem" class="form-label">Imagem</label>
+				<input name="urlImagem" class="form-control" placeholder="url da imagem"/>
+				<small>Copie a url de uma boa imagem do produto</small>
+			</div>
+		
+			<div class="col-md-8">
+				<label for="descricao" class="form-label">Descrição</label>
+				<textarea name="descricao" class="form-control" placeholder="Adicione detalhes importantes para ajudar o comprador"> </textarea>
+			</div>
+		
+			<div class="col-md-4">
+				<button type="submit" class="mt-4 btn btn-primary">Cadastrar</button>
+			</div>
+		
+		</form>
+		</div>
+		
 	</body>
+	
+		
 	
 </html>
 	
