@@ -15,29 +15,39 @@
 		
 		<div class="container">
 		
-		<form action="/pedido/novo" method="POST" class="card p-4 col-8">
+		<form th:object="${requisicaoNovoPedido}" action="/pedido/novo" method="POST" class="card p-4 col-8">
 		
 			<div class="col-md-8">
 				<label for="nomeProduto" class="form-label">Produto</label>
-				<input name="nomeProduto" class="form-control" placeholder="nome do produto"/>
+				<input th:field="*{nomeProduto}" th:errorclass="is-invalid" class="form-control" placeholder="nome do produto"/>
 				<small>Informe qual o nome do produto</small>
+				<div th:errors="*{nomeProduto}" class="invalid-feedback">
+					
+				</div>
+				
 			</div>
 			
 			<div class="col-md-8">
 				<label for="urlProduto" class="form-label">Url</label>
-				<input name="urlProduto" class="form-control" placeholder="url do produto"/>
+				<input th:field="*{urlProduto}" th:errorclass="is-invalid" class="form-control" placeholder="url do produto"/>
 				<small>Procure em um site o produto que você deseja</small>
+				<div th:errors="*{urlProduto}" class="invalid-feedback"></div>
+				
 			</div>
 			
 			<div class="col-md-8">
 				<label for="urlImagem" class="form-label">Imagem</label>
-				<input name="urlImagem" class="form-control" placeholder="url da imagem"/>
+				<input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" placeholder="url da imagem"/>
 				<small>Copie a url de uma boa imagem do produto</small>
+				<div th:errors="*{urlImagem}"  class="invalid-feedback"></div>
+				
 			</div>
 		
 			<div class="col-md-8">
 				<label for="descricao" class="form-label">Descrição</label>
-				<textarea name="descricao" class="form-control" placeholder="Adicione detalhes importantes para ajudar o comprador"> </textarea>
+				<textarea th:field="*{descricao}" th:errorclass="is-invalid" name="descricao" class="form-control" placeholder="Adicione detalhes importantes para ajudar o comprador"> </textarea>
+				<div th:errors="*{descricao}" class="invalid-feedback"></div>
+				
 			</div>
 		
 			<div class="col-md-4">
